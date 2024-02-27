@@ -16,6 +16,8 @@ ROCK ; WOOD ; HIDE ; ORE ; FIBER
 Pour voir le prix des resources enchantés, ajouter:
 _LEVEL0@0
 a la fin du nom de la ressource, remplacer 0 par le niveau d'enchantement.
+
+Si <;> oopsie est affiché, alors la récupération des donnée a eu un problème...
 -----
 
 """
@@ -33,7 +35,10 @@ def check(file):
     while arg != "q":
         for resources in data:
             if resources["item_id"] == arg:
-                print(f"Price : {resources['sell_price_min']}\n")
+                if resources["sell_price_min_date"] == "0001-01-01T00:00:00":
+                    print("<;> oopsie :3")
+                else :
+                    print(f"Price : {resources['sell_price_min']}\n")
         print("<;> Resource name ?")
         arg = str(input())
 
