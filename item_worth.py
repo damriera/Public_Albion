@@ -1,8 +1,8 @@
 import json
 
-file = "Martlock_prices.json"
 
-def main(file):
+def main():
+    file = "Martlock_prices.json"
     with open(file, "r") as FILE:
         data = json.load(FILE)
     
@@ -25,8 +25,7 @@ def main(file):
     
     for items in most_worth:
         print("-------")
-        print(f"<;> {items[0]} : {items[1]}")
+        print(f"<;> :{items[0]}: {items[0]} : {items[1]}")
     print("-------")
 
 
-main(file)
